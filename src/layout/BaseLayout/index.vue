@@ -1,14 +1,19 @@
 <!-- admin布局 -->
 <template>
   <el-container style="height: 100vh;" id="layout">
-    <el-aside class="side" :style="{'width':!isCollapse ? '200px' : '64px'}">
+    <el-aside class="side" :style="{ width: !isCollapse ? '200px' : '64px' }">
       <div class="logo">
         <div class="logo-img">
-          <img src="@/assets/logo.png" alt="logo">
+          <img src="@/assets/logo.png" alt="logo" />
         </div>
         <h1>后台管理系统</h1>
       </div>
-      <el-menu class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+      <el-menu
+        class="el-menu-vertical-demo"
+        @open="handleOpen"
+        @close="handleClose"
+        :collapse="isCollapse"
+      >
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-location"></i>
@@ -44,7 +49,7 @@
     <el-container>
       <el-header class="layout-header">
         <div class="isCollapse" @click="isCollapse = !isCollapse">
-          <i :class="[isCollapse?'el-icon-s-unfold':'el-icon-s-fold']"></i>
+          <i :class="[isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"></i>
         </div>
         <!-- <span>王小虎</span> -->
       </el-header>
@@ -53,7 +58,6 @@
       </el-main>
     </el-container>
   </el-container>
-
 </template>
 
 <script>
@@ -73,7 +77,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss">
 #layout {

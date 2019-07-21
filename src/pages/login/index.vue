@@ -2,17 +2,38 @@
   <div class="login-layout">
     <div class="login-form">
       <h3>
-        <img src="@/assets/logo.png" alt="logo">
+        <img src="@/assets/logo.png" alt="logo" />
         <span>后台管理系统</span>
       </h3>
       <el-form :model="from" :rules="rules" status-icon ref="ruleForm">
         <el-form-item prop="phone">
-          <el-input size="small" type="password" prefix-icon="el-icon-user" placeholder="请输入账号" v-model="from.phone" autocomplete="off"></el-input>
+          <el-input
+            size="small"
+            type="password"
+            prefix-icon="el-icon-user"
+            placeholder="请输入账号"
+            v-model="from.phone"
+            autocomplete="off"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input size="small" type="password" prefix-icon="el-icon-lock" placeholder="请输入密码" v-model="from.password" autocomplete="off"></el-input>
+          <el-input
+            size="small"
+            type="password"
+            prefix-icon="el-icon-lock"
+            placeholder="请输入密码"
+            v-model="from.password"
+            autocomplete="off"
+          ></el-input>
         </el-form-item>
-        <el-button size="small" :loading="loading" class="submit-btn" type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button
+          size="small"
+          :loading="loading"
+          class="submit-btn"
+          type="primary"
+          @click="submitForm('ruleForm')"
+          >提交
+        </el-button>
       </el-form>
     </div>
   </div>
