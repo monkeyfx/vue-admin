@@ -59,27 +59,31 @@
           <div class="block">
             <i class="iconfont icon-quanping"></i>
           </div>
-          <el-dropdown class="block" trigger="click">
+          <el-dropdown class="block" trigger="click" @command="handleCommand">
             <span>
               <i class="iconfont icon-conows-in-change "></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>中文</el-dropdown-item>
-              <el-dropdown-item>English</el-dropdown-item>
+              <el-dropdown-item command="cn" :disabled="$i18n.locale === 'cn'"
+                >中文</el-dropdown-item
+              >
+              <el-dropdown-item command="en" :disabled="$i18n.locale === 'en'"
+                >English</el-dropdown-item
+              >
             </el-dropdown-menu>
           </el-dropdown>
-          <el-popover
-            class="block"
-            placement="bottom"
-            width="400"
-            trigger="click"
-          >
+          <el-popover class="block" placement="bottom" trigger="click">
             <div>
-              主题
+              <photoshop-picker
+                colors="text-advanced"
+                popover-to="left"
+                inline
+                v-model="color"
+              />
             </div>
             <i class="iconfont icon-zhuti" slot="reference"></i>
           </el-popover>
-          <div class="block">
+          <el-dropdown class="block" trigger="click">
             <img
               src="@/assets/avatar.gif"
               alt="avatar"
@@ -87,10 +91,15 @@
               height="35px"
               style="border-radius:5px"
             />
-          </div>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>中文</el-dropdown-item>
+              <el-dropdown-item>English</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </div>
       </el-header>
       <el-main>
+        <test />
         <router-view />
       </el-main>
     </el-container>
@@ -98,11 +107,20 @@
 </template>
 
 <script>
+import Swatches from "vue-swatches";
+import test from "./test";
+import "vue-swatches/dist/vue-swatches.min.css";
+
 export default {
   data() {
     return {
-      isCollapse: true
+      isCollapse: true,
+      color: "#000000"
     };
+  },
+  components: {
+    "photoshop-picker": Swatches,
+    test
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -110,8 +128,12 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    handleCommand(lang) {
+      this.$i18n.locale = lang;
     }
-  }
+  },
+  mounted() {}
 };
 </script>
 
@@ -140,7 +162,6 @@ export default {
       & .block {
         display: flex;
         height: 100%;
-
         align-items: center;
         cursor: pointer;
         transition: all 0.3s;
@@ -156,6 +177,9 @@ export default {
           padding: 0 15px;
         }
         & .icon-quanping {
+          padding: 0 15px;
+        }
+        & .avatar {
           padding: 0 15px;
         }
       }
