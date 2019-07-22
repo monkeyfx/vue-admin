@@ -48,10 +48,47 @@
     </el-aside>
     <el-container>
       <el-header class="layout-header">
-        <div class="isCollapse" @click="isCollapse = !isCollapse">
-          <i :class="[isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"></i>
+        <div>
+          <div class="isCollapse" @click="isCollapse = !isCollapse">
+            <i
+              :class="[isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"
+            ></i>
+          </div>
         </div>
-        <!-- <span>王小虎</span> -->
+        <div class="header-right-tools">
+          <div class="block">
+            <i class="iconfont icon-quanping"></i>
+          </div>
+          <el-dropdown class="block" trigger="click">
+            <span>
+              <i class="iconfont icon-conows-in-change "></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>中文</el-dropdown-item>
+              <el-dropdown-item>English</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+          <el-popover
+            class="block"
+            placement="bottom"
+            width="400"
+            trigger="click"
+          >
+            <div>
+              主题
+            </div>
+            <i class="iconfont icon-zhuti" slot="reference"></i>
+          </el-popover>
+          <div class="block">
+            <img
+              src="@/assets/avatar.gif"
+              alt="avatar"
+              width="35px"
+              height="35px"
+              style="border-radius:5px"
+            />
+          </div>
+        </div>
       </el-header>
       <el-main>
         <router-view />
@@ -86,6 +123,7 @@ export default {
     line-height: 50px;
     border-bottom: solid 1px #e6e6e6;
     display: flex;
+    justify-content: space-between;
     padding: 0;
     & .isCollapse {
       font-size: 20px;
@@ -94,6 +132,32 @@ export default {
       transition: all 0.3s;
       &:hover {
         background: #eee;
+      }
+    }
+    & .header-right-tools {
+      display: flex;
+      margin-right: 10px;
+      & .block {
+        display: flex;
+        height: 100%;
+
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          background: #eee;
+        }
+        & .icon-conows-in-change {
+          font-size: 20px;
+          padding: 0 15px;
+        }
+        & .icon-zhuti {
+          font-size: 20px;
+          padding: 0 15px;
+        }
+        & .icon-quanping {
+          padding: 0 15px;
+        }
       }
     }
   }
