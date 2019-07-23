@@ -86,7 +86,7 @@ export default {
   z-index: -1;
   .login-form {
     width: 350px;
-    height: 300px;
+    height: 260px;
     background: rgba(255, 255, 255, 0.9);
     padding: 15px;
     border-radius: 5px;

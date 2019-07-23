@@ -14,8 +14,12 @@
         <slot name="header"></slot>
         <slot name="tabs"></slot>
       </div>
-      <div class="layout-container-content">
-        <slot name="content"></slot>
+      <div class="layout-container-content" v-loading="false">
+        <vue-scroll :ops="options">
+          <div class="layout-container-content-view">
+            <slot name="content"></slot>
+          </div>
+        </vue-scroll>
       </div>
     </div>
   </div>
@@ -24,6 +28,20 @@
 import { mapState } from "vuex";
 
 export default {
+  data() {
+    return {
+      options: {
+        bar: {
+          background: "#000000",
+          opacity: "0.5",
+          minSize: 0.1
+        },
+        rail: {
+          size: "5px"
+        }
+      }
+    };
+  },
   computed: {
     ...mapState("layout", ["isCollapse"])
   }
@@ -47,7 +65,9 @@ export default {
     height: calc(100vh - 80px);
     overflow: hidden;
     overflow-y: auto;
-    padding: 15px;
+    .layout-container-content-view {
+      padding: 15px;
+    }
   }
 }
 </style>

@@ -16,8 +16,8 @@ export default {
 <style lang="scss">
 .logo {
   height: 50px;
-  border-bottom: solid 1px #e6e6e6;
-  border-right: solid 1px #e6e6e6;
+  border-bottom: solid 1px #cccccc;
+  border-right: solid 1px #cccccc;
   overflow: hidden;
   display: flex;
   align-items: center;

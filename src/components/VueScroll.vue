@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <vue-scroll :ops="ops">
+    <slot />
+  </vue-scroll>
 </template>
 <script>
 export default {
@@ -7,19 +9,15 @@ export default {
     return {
       ops: {
         bar: {
-          background: "#489CFB",
-          opacity: "0.7",
-          minSize: 0.25,
-          showDelay: "1000",
-          size: "6px"
+          background: "#000000",
+          opacity: "0.5",
+          minSize: 0.1
         },
         rail: {
-          size: "0px"
+          size: "3px"
         }
       }
     };
   }
 };
 </script>
-
-<style></style>

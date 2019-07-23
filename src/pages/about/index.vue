@@ -5,7 +5,7 @@
       v-for="item in 10"
       :key="item"
     >
-      admin
+      about
     </div>
   </div>
 </template>

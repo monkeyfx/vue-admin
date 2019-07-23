@@ -39,7 +39,7 @@
         </div>
         <i class="iconfont icon-zhuti" slot="reference"></i>
       </el-popover>
-      <el-dropdown class="block" trigger="click">
+      <el-dropdown class="block avatar" trigger="click">
         <img
           src="@/assets/avatar.gif"
           alt="avatar"
@@ -48,8 +48,8 @@
           style="border-radius:5px"
         />
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>中文</el-dropdown-item>
-          <el-dropdown-item>English</el-dropdown-item>
+          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item>退出登陆</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -87,7 +87,7 @@ export default {
 .layout-header.el-header {
   color: #333;
   height: 50px !important;
-  border-bottom: solid 1px #e6e6e6;
+  border-bottom: solid 1px #cccccc;
   padding: 0;
   overflow: hidden;
   display: flex;
@@ -115,6 +115,8 @@ export default {
     display: flex;
     align-items: center;
     margin-right: 10px;
+    height: 50px;
+
     & .block {
       display: flex;
       height: 100%;
@@ -135,9 +137,9 @@ export default {
       & .icon-quanping {
         padding: 0 15px;
       }
-      & .avatar {
-        padding: 0 15px;
-      }
+    }
+    & .avatar {
+      padding: 0 15px;
     }
   }
 }

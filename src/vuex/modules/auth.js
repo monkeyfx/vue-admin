@@ -18,7 +18,11 @@ export default {
         commit("SET_LOADING", false);
         commit("SET_TOKEN", token);
         sessionStorage["TOKEN"] = token;
-        vm.$router.push(vm.$route.query.redirect);
+        if (vm.$route.query.redirect) {
+          vm.$router.push(vm.$route.query.redirect);
+        } else {
+          vm.$router.push("/");
+        }
       });
     }
   }

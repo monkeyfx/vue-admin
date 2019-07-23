@@ -20,6 +20,14 @@ const router = new Router({
           meta: {
             auth: true
           }
+        },
+        {
+          path: "/about",
+          name: "about",
+          component: () => import("@/pages/about"),
+          meta: {
+            auth: true
+          }
         }
       ]
     },
