@@ -51,25 +51,25 @@ v-leave-to: 定义离开的结束状态
 /* 进入 */
 .fade-enter {
   opacity: 0;
-  transform: translateX(5%);
+  /* transform: translateX(5%); */
 }
 .fade-enter-active {
   transition: all 0.5s;
 }
 .fade-enter-to {
   opacity: 1;
-  transform: translateX(0);
+  /* transform: translateX(0); */
 }
 /* 出去 */
 .fade-leave {
   opacity: 0.1;
-  transform: translateX(-99%);
+  /* transform: translateX(-95%); */
 }
 .fade-leave-active {
   transition: all 0.5s;
 }
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(-100%);
+  /* transform: translateX(-100%); */
 }
 </style>
