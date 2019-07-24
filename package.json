@@ -1,13 +1,13 @@
 {
-  "name": "admin",
+  "name": "vue-admin",
   "version": "0.0.1",
   "private": true,
-  "homepage": ".",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "github-pages": "npm run build && gh-pages -d dist"
+    "github-pages": "npm run build && gh-pages -d dist",
+    "git:push": "git add . && git cz && git push"
   },
   "pre-commit": [
     "lint"
@@ -30,6 +30,8 @@
     "@vue/cli-service": "^3.8.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -74,5 +76,10 @@
     "propList": [
       "*"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
