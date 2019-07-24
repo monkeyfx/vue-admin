@@ -6,21 +6,12 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "github-pages": "npm run build && gh-pages -d dist",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "vue-cli-service lint",
+    "github-pages": "npm run build && gh-pages -d dist"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
-  "lint-staged": {
-    "*.vue": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "axios": "^0.19.0",
     "element-ui": "^2.10.1",
@@ -43,9 +34,8 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
     "gh-pages": "^2.0.1",
-    "husky": "^3.0.1",
-    "lint-staged": "^9.2.0",
     "node-sass": "^4.9.0",
+    "pre-commit": "^1.2.2",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },
