@@ -1,8 +1,7 @@
 <template>
   <el-header class="layout-header">
     <div class="layout-header-left">
-      <div class="isCollapse"
-           @click="SET_IS_COLLAPSE(!isCollapse)">
+      <div class="isCollapse" @click="SET_IS_COLLAPSE(!isCollapse)">
         <i :class="[isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"></i>
       </div>
       <el-breadcrumb separator="/">
@@ -16,38 +15,38 @@
       <div class="block">
         <i class="iconfont icon-quanping"></i>
       </div>
-      <el-dropdown class="block"
-                   trigger="click"
-                   @command="handleCommand">
+      <el-dropdown class="block" trigger="click" @command="handleCommand">
         <span>
           <i class="iconfont icon-conows-in-change "></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="cn"
-                            :disabled="$i18n.locale === 'cn'">中文</el-dropdown-item>
-          <el-dropdown-item command="en"
-                            :disabled="$i18n.locale === 'en'">English</el-dropdown-item>
+          <el-dropdown-item command="cn" :disabled="$i18n.locale === 'cn'"
+            >中文</el-dropdown-item
+          >
+          <el-dropdown-item command="en" :disabled="$i18n.locale === 'en'"
+            >English</el-dropdown-item
+          >
         </el-dropdown-menu>
       </el-dropdown>
-      <el-popover class="block"
-                  placement="bottom"
-                  trigger="click">
+      <el-popover class="block" placement="bottom" trigger="click">
         <div>
-          <swatches-component colors="text-advanced"
-                              popover-to="left"
-                              inline
-                              v-model="color" />
+          <swatches-component
+            colors="text-advanced"
+            popover-to="left"
+            inline
+            v-model="color"
+          />
         </div>
-        <i class="iconfont icon-zhuti"
-           slot="reference"></i>
+        <i class="iconfont icon-zhuti" slot="reference"></i>
       </el-popover>
-      <el-dropdown class="block avatar"
-                   trigger="click">
-        <img src="@/assets/avatar.gif"
-             alt="avatar"
-             width="35px"
-             height="35px"
-             style="border-radius:5px" />
+      <el-dropdown class="block avatar" trigger="click">
+        <img
+          src="@/assets/avatar.gif"
+          alt="avatar"
+          width="35px"
+          height="35px"
+          style="border-radius:5px"
+        />
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
           <el-dropdown-item>退出登陆</el-dropdown-item>

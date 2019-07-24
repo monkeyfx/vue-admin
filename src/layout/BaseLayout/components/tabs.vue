@@ -1,13 +1,12 @@
 <template>
   <div class="layout-tabs">
-    <el-tabs v-model="tabsValue"
-             type="card"
-             closable
-             @tab-remove="removeTab">
-      <el-tab-pane :key="item.name"
-                   v-for="item in tableTabs"
-                   :label="item.title"
-                   :name="item.name" />
+    <el-tabs v-model="tabsValue" type="card" closable @tab-remove="removeTab">
+      <el-tab-pane
+        :key="item.name"
+        v-for="item in tableTabs"
+        :label="item.title"
+        :name="item.name"
+      />
     </el-tabs>
   </div>
 </template>
