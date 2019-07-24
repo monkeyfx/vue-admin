@@ -10,7 +10,7 @@
     "lint": "vue-cli-service lint"
   },
   "gitHooks": {
-    "pre-commit": "npm run lint"
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "axios": "^0.19.0",
