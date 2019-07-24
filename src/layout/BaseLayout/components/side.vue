@@ -1,32 +1,20 @@
 <template>
   <el-aside class="side" :style="{ width: !isCollapse ? '200px' : '64px' }">
     <vue-scroll :ops="options">
-      <el-menu @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-        <!-- ------------------------------------------------- -->
-        <router-link to="/admin">
-          <el-menu-item index="2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
-          </el-menu-item>
-        </router-link>
-        <router-link to="/about">
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>
-        </router-link>
-
-        <!-- ------------------------------------------------- -->
+      <el-menu :collapse="isCollapse" :router="true">
+        <menu-component :array="menuConfig" :isCollapse="isCollapse" />
       </el-menu>
     </vue-scroll>
   </el-aside>
 </template>
 <script>
 import { mapState } from "vuex";
-
+import menuConfig from "@/_config/menu.config";
+import MenuComponent from "./menu";
 export default {
   data() {
     return {
+      menuConfig: menuConfig,
       options: {
         bar: {
           background: "#000000",
@@ -39,15 +27,8 @@ export default {
       }
     };
   },
-  computed: { ...mapState("layout", ["isCollapse"]) },
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    }
-  }
+  components: { MenuComponent },
+  computed: { ...mapState("layout", ["isCollapse"]) }
 };
 </script>
 

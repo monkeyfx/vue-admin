@@ -8,7 +8,9 @@ import "element-ui/lib/theme-chalk/index.css";
 import "./main.scss";
 import i18n from "./_config/i18n/i18n";
 import vuescroll from "vuescroll";
+import Fragment from "vue-fragment";
 
+Vue.use(Fragment.Plugin);
 Vue.config.productionTip = false;
 Vue.prototype.$ = axios;
 Vue.prototype.$qs = qs;
