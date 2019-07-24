@@ -2,9 +2,11 @@
   "name": "admin",
   "version": "0.0.1",
   "private": true,
+  "homepage": ".",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "github-pages": "npm run build && gh-pages -d dist",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -27,6 +29,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
