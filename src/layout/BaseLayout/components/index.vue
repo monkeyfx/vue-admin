@@ -5,16 +5,15 @@
       <slot name="sidebar"></slot>
     </div>
     <div>
-      <div
-        class="layout-container-header"
-        :style="{
+      <div class="layout-container-header"
+           :style="{
           width: !isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 64px)'
-        }"
-      >
+        }">
         <slot name="header"></slot>
         <slot name="tabs"></slot>
       </div>
-      <div class="layout-container-content" v-loading="false">
+      <div class="layout-container-content"
+           v-loading="false">
         <vue-scroll :ops="options">
           <div class="layout-container-content-view">
             <slot name="content"></slot>

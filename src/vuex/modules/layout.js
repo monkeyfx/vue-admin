@@ -1,4 +1,5 @@
 import layoutConfig from "@/_config/layout.config";
+
 export default {
   namespaced: true,
   state: {
