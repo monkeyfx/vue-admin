@@ -1,8 +1,12 @@
 <template>
-  <el-aside class="side" :style="{ width: !isCollapse ? '200px' : '64px' }">
+  <el-aside class="side" :style="{ width: isCollapse ? '200px' : '64px' }">
     <vue-scroll :ops="options">
-      <el-menu :collapse="isCollapse" :router="true">
-        <menu-component :array="menuConfig" :isCollapse="isCollapse" />
+      <el-menu
+        :collapse="!isCollapse"
+        :router="true"
+        :default-active="menuActive"
+      >
+        <menu-component :array="menuConfig" />
       </el-menu>
     </vue-scroll>
   </el-aside>
@@ -28,7 +32,7 @@ export default {
     };
   },
   components: { MenuComponent },
-  computed: { ...mapState("layout", ["isCollapse"]) }
+  computed: { ...mapState("layout", ["isCollapse", "menuActive"]) }
 };
 </script>
 

@@ -1,9 +1,9 @@
 <template>
-  <div class="logo" :style="{ width: !isCollapse ? '200px' : '64px' }">
+  <div class="logo" :style="{ width: isCollapse ? '200px' : '64px' }">
     <div class="logo-img">
       <img src="@/assets/logo.png" alt="logo" />
     </div>
-    <h1 :style="{ opacity: !isCollapse ? '1' : '0' }">后台管理系统</h1>
+    <h1 :style="{ opacity: isCollapse ? '1' : '0' }">后台管理系统</h1>
   </div>
 </template>
 <script>

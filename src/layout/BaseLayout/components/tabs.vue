@@ -2,37 +2,38 @@
   <div class="layout-tabs">
     <el-tabs v-model="tabsValue" type="card" closable @tab-remove="removeTab">
       <el-tab-pane
-        :key="item.name"
-        v-for="item in tableTabs"
+        v-for="item in historys"
+        :key="item.path"
         :label="item.title"
-        :name="item.name"
+        :name="item.path"
       />
     </el-tabs>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
-      tabsValue: "2",
-      tableTabs: [
-        {
-          title: "Tab 1",
-          name: "1"
-        }
-      ],
-      tabIndex: 2
+      tabsValue: this.$route.path
     };
   },
-  mounted() {
-    this.tableTabs = Object.keys([...new Array(100)]).map(item => ({
-      title: `Tabs` + item,
-      name: item
-    }));
+  watch: {
+    tabsValue(path) {
+      this.$router.push(path);
+    },
+    $route({ path }) {
+      this.tabsValue = path;
+    }
+  },
+  computed: {
+    ...mapState("layout", ["historys"])
   },
   methods: {
-    removeTab() {}
+    removeTab() {
+      console.log(1);
+    }
   }
 };
 </script>
@@ -75,6 +76,9 @@ export default {
   & .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
     min-height: 400px;
+  }
+  & .el-tabs__item:first-child .el-icon-close {
+    display: none;
   }
 }
 </style>

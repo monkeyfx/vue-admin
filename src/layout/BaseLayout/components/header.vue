@@ -2,14 +2,9 @@
   <el-header class="layout-header">
     <div class="layout-header-left">
       <div class="isCollapse" @click="SET_IS_COLLAPSE(!isCollapse)">
-        <i :class="[isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold']"></i>
+        <i :class="[isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold']"></i>
       </div>
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-      </el-breadcrumb>
+      <breadcrumbfrom-component />
     </div>
     <div class="header-right-tools">
       <div class="block">
@@ -59,6 +54,7 @@
 <script>
 import "vue-swatches/dist/vue-swatches.min.css";
 import SwatchesComponent from "vue-swatches";
+import BreadcrumbfromComponent from "./breadcrumb";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -68,7 +64,8 @@ export default {
     };
   },
   components: {
-    SwatchesComponent
+    SwatchesComponent,
+    BreadcrumbfromComponent
   },
   computed: {
     ...mapState("layout", ["isCollapse"])
