@@ -1,7 +1,13 @@
 import Vue from "vue";
 import Router from "vue-router";
 import store from "@/vuex";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css"; // nprogress样式文件
+import menuConfig from "./menu.config";
 Vue.use(Router);
+NProgress.configure({
+  showSpinner: false // 是否显示加载ico
+});
 
 const router = new Router({
   mode: "hash",
@@ -12,24 +18,7 @@ const router = new Router({
       meta: {
         auth: true
       },
-      children: [
-        {
-          path: "/admin",
-          name: "home",
-          component: () => import("@/pages/home"),
-          meta: {
-            auth: true
-          }
-        },
-        {
-          path: "/about",
-          name: "about",
-          component: () => import("@/pages/about"),
-          meta: {
-            auth: true
-          }
-        }
-      ]
+      children: menuConfig.flat(Infinity)
     },
     {
       path: "/login",
@@ -44,6 +33,7 @@ const router = new Router({
  * next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
  */
 router.beforeEach((to, from, next) => {
+  NProgress.start();
   if (to.meta.auth && !store.state.auth.token) {
     return next({
       path: "/login",
@@ -52,7 +42,15 @@ router.beforeEach((to, from, next) => {
       }
     });
   }
+  if (to.path === "/") {
+    return next({
+      path: "/dashboard"
+    });
+  }
   next();
 });
-
+router.afterEach((to, from) => {
+  NProgress.done();
+  console.log(to, from);
+});
 export default router;

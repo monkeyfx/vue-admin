@@ -13,9 +13,11 @@
       <TabsComponent />
     </template>
     <template #content>
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
+      <keep-alive>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </keep-alive>
     </template>
   </Layout>
 </template>
