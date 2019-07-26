@@ -5,7 +5,7 @@ export default {
   state: {
     ...layoutConfig,
     //  历史记录
-    historys: [{ title: "首页", path: "/dashboard" }],
+    historys: [{ title: "仪表盘", path: "/dashboard" }],
     // 当前的路由
     menuActive: "",
     // 面包屑导航

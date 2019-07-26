@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -31,8 +31,25 @@ export default {
     ...mapState("layout", ["historys"])
   },
   methods: {
-    removeTab() {
-      console.log(1);
+    ...mapMutations("layout", ["SET_HISTORYS"]),
+    removeTab(targetName) {
+      let tabs = this.historys;
+      let activeName = this.tabsValue;
+      if (activeName === targetName) {
+        tabs.forEach((tab, index) => {
+          if (tab.path === targetName) {
+            let nextTab = tabs[index + 1] || tabs[index - 1];
+            if (nextTab) {
+              activeName = nextTab.path;
+            }
+          }
+        });
+      }
+      const historys = tabs.filter(tab => tab.path !== targetName);
+      console.log(historys);
+      // 保存路由历史记录
+      this.SET_HISTORYS(historys);
+      this.tabsValue = activeName;
     }
   }
 };
