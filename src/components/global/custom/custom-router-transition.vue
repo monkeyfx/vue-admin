@@ -3,6 +3,12 @@
     <router-view />
   </transition>
 </template>
+<script>
+export default {
+  name: "custom-router-transition"
+};
+</script>
+
 <style lang="scss" scoped>
 /* 
 v-enter: 定义进入过渡的开始状态

@@ -1,5 +1,5 @@
 <template>
-  <div class="logo" :style="{ width: isCollapse ? '200px' : '64px' }">
+  <div class="logo" :style="{ width: isCollapse ? '200px' : '50px' }">
     <div class="logo-img">
       <img src="@/assets/logo.png" alt="logo" />
     </div>
@@ -21,11 +21,10 @@ export default {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
   white-space: nowrap;
   transition: all 0.3s;
   & .logo-img {
-    width: 64px;
+    width: 49px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -38,7 +37,7 @@ export default {
     transition: all 0.3s;
   }
   & img {
-    height: 35px;
+    height: 30px;
   }
 }
 </style>

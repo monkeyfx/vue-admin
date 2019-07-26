@@ -1,3 +1,5 @@
 <template>
-  <div>test - 1</div>
+  <custom-empty>
+    test - 1
+  </custom-empty>
 </template>

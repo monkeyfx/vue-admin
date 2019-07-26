@@ -25,12 +25,7 @@
       </el-dropdown>
       <el-popover class="block" placement="bottom" trigger="click">
         <div>
-          <swatches-component
-            colors="text-advanced"
-            popover-to="left"
-            inline
-            v-model="color"
-          />
+          1
         </div>
         <i class="iconfont icon-zhuti" slot="reference"></i>
       </el-popover>
@@ -52,8 +47,6 @@
 </template>
 
 <script>
-import "vue-swatches/dist/vue-swatches.min.css";
-import SwatchesComponent from "vue-swatches";
 import BreadcrumbfromComponent from "./breadcrumb";
 import { mapMutations, mapState } from "vuex";
 
@@ -64,7 +57,6 @@ export default {
     };
   },
   components: {
-    SwatchesComponent,
     BreadcrumbfromComponent
   },
   computed: {

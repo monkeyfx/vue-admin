@@ -5,8 +5,8 @@ import axios from "./_config/axios.config";
 import qs from "qs";
 import ElementUI from "element-ui";
 import i18n from "./_config/i18n/i18n";
-import vuescroll from "vuescroll";
 import Fragment from "vue-fragment";
+import CustomGlobal from "@/components/global";
 
 import "element-ui/lib/theme-chalk/index.css";
 import "./main.scss";
@@ -17,8 +17,8 @@ Vue.prototype.$ = axios;
 Vue.prototype.$qs = qs;
 
 Vue.use(ElementUI);
-Vue.use(vuescroll);
 Vue.use(Fragment.Plugin);
+Vue.use(CustomGlobal);
 
 export default new Vue({
   router,

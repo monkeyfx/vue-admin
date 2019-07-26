@@ -14,7 +14,7 @@
     </template>
     <template #content>
       <keep-alive>
-        <router-transition />
+        <custom-router-transition />
       </keep-alive>
     </template>
   </Layout>
@@ -25,15 +25,13 @@ import Layout from "./components/index";
 import LogoComponent from "./components/logo";
 import SideComponent from "./components/side";
 import TabsComponent from "./components/tabs";
-import RouterTransition from "@/components/RouterTransition";
 export default {
   components: {
     Layout,
     HeaderComponent,
     LogoComponent,
     SideComponent,
-    TabsComponent,
-    RouterTransition
+    TabsComponent
   }
 };
 </script>

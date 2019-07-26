@@ -1,14 +1,52 @@
 <template>
-  <el-aside class="side" :style="{ width: isCollapse ? '200px' : '64px' }">
-    <vue-scroll :ops="options">
+  <el-aside class="side" :style="{ width: isCollapse ? '200px' : '50px' }">
+    <el-scrollbar>
       <el-menu
         :collapse="!isCollapse"
         :router="true"
+        :collapse-transition="false"
+        :unique-opened="false"
         :default-active="menuActive"
       >
         <menu-component :array="menuConfig" />
       </el-menu>
-    </vue-scroll>
+      <el-menu
+        :collapse="!isCollapse"
+        :router="true"
+        :collapse-transition="false"
+        :unique-opened="false"
+        :default-active="menuActive"
+      >
+        <menu-component :array="menuConfig" />
+      </el-menu>
+      <el-menu
+        :collapse="!isCollapse"
+        :router="true"
+        :collapse-transition="false"
+        :unique-opened="false"
+        :default-active="menuActive"
+      >
+        <menu-component :array="menuConfig" />
+      </el-menu>
+      <el-menu
+        :collapse="!isCollapse"
+        :router="true"
+        :collapse-transition="false"
+        :unique-opened="false"
+        :default-active="menuActive"
+      >
+        <menu-component :array="menuConfig" />
+      </el-menu>
+      <el-menu
+        :collapse="!isCollapse"
+        :router="true"
+        :collapse-transition="false"
+        :unique-opened="false"
+        :default-active="menuActive"
+      >
+        <menu-component :array="menuConfig" />
+      </el-menu>
+    </el-scrollbar>
   </el-aside>
 </template>
 <script>

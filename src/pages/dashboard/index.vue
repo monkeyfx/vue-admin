@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <custom-empty>
     Dashboard
-  </div>
+  </custom-empty>
 </template>

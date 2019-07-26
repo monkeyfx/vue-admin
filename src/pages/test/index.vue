@@ -1,12 +1,5 @@
 <template>
   <div>
-    <router-transition />
+    <custom-router-transition />
   </div>
 </template>
-<script>
-import RouterTransition from "@/components/RouterTransition";
-
-export default {
-  components: { RouterTransition }
-};
-</script>

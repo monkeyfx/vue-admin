@@ -8,18 +8,18 @@
       <div
         class="layout-container-header"
         :style="{
-          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 64px)'
+          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 50px)'
         }"
       >
         <slot name="header"></slot>
         <slot name="tabs"></slot>
       </div>
       <div class="layout-container-content" v-loading="false">
-        <vue-scroll :ops="options">
+        <el-scrollbar>
           <div class="layout-container-content-view">
             <slot name="content"></slot>
           </div>
-        </vue-scroll>
+        </el-scrollbar>
       </div>
     </div>
   </div>
@@ -29,18 +29,7 @@ import { mapState } from "vuex";
 
 export default {
   data() {
-    return {
-      options: {
-        bar: {
-          background: "#000000",
-          opacity: "0.5",
-          minSize: 0.1
-        },
-        rail: {
-          size: "5px"
-        }
-      }
-    };
+    return {};
   },
   computed: {
     ...mapState("layout", ["isCollapse"])
