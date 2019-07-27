@@ -1,10 +1,12 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/' }">
+      {{ $t("menu.HomePage") }}
+    </el-breadcrumb-item>
     <transition-group name="fade" mode="out-in">
-      <el-breadcrumb-item v-for="item of breadcrumbs" :key="item.path">{{
-        item.title
-      }}</el-breadcrumb-item>
+      <el-breadcrumb-item v-for="item of breadcrumbs" :key="item.path">
+        {{ $t(item.title) }}
+      </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>
 </template>

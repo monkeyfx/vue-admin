@@ -6,7 +6,7 @@ export default {
     // 布局配置
     ...layoutConfig,
     //  历史记录
-    historys: [{ title: "仪表盘", path: "/dashboard" }],
+    historys: [{ title: "menu.Dashboard", path: "/dashboard" }],
     // 当前的路由
     menuActive: "",
     // 面包屑导航

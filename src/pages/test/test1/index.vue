@@ -1,5 +1,5 @@
 <template>
   <custom-empty>
-    test - 1
+    {{ $t("menu.Test1") }}
   </custom-empty>
 </template>

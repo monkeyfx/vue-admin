@@ -1,5 +1,5 @@
 <template>
   <custom-empty>
-    Dashboard
+    {{ $t("menu.Dashboard") }}
   </custom-empty>
 </template>

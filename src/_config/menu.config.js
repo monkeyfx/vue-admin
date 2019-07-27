@@ -11,7 +11,7 @@ export default [
   {
     path: "/dashboard",
     icon: "el-icon-orange",
-    title: "仪表盘",
+    title: "menu.Dashboard",
     name: "dashboard",
     meta: {
       auth: true
@@ -21,7 +21,7 @@ export default [
   {
     path: "/test",
     icon: "el-icon-menu",
-    title: "测试",
+    title: "menu.Test",
     name: "test",
     component: () => import("@/pages/test"),
     meta: {
@@ -31,7 +31,7 @@ export default [
       {
         path: "/test/test1",
         icon: "el-icon-menu",
-        title: "测试-1",
+        title: "menu.Test1",
         name: "test-1",
         component: () => import("@/pages/test/test1"),
         meta: {
@@ -41,7 +41,7 @@ export default [
       {
         path: "/test/test2",
         icon: "el-icon-menu",
-        title: "测试-2",
+        title: "menu.Test2",
         name: "test-2",
         component: () => import("@/pages/test/test2"),
         meta: {
@@ -51,7 +51,7 @@ export default [
       {
         path: "/test/test3",
         icon: "el-icon-menu",
-        title: "测试-3",
+        title: "menu.Test3",
         name: "test-3",
         component: () => import("@/pages/test/test3"),
         meta: {
@@ -61,7 +61,7 @@ export default [
       {
         path: "/test/test4",
         icon: "el-icon-menu",
-        title: "测试-4",
+        title: "menu.Test4",
         name: "test-4",
         component: () => import("@/pages/test/test4"),
         meta: {

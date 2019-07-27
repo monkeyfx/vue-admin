@@ -7,7 +7,7 @@
     <div class="logo-img">
       <img src="@/assets/logo.png" alt="logo" />
     </div>
-    <h1 :style="{ opacity: isCollapse ? '1' : '0' }">后台管理系统</h1>
+    <h1 :style="{ opacity: isCollapse ? '1' : '0' }">VUE ADMIN</h1>
   </div>
 </template>
 <script>
@@ -40,10 +40,10 @@ export default {
     width: calc(100% - 63px);
     font-size: 20px;
     transition: all 0.3s;
-    text-align: center;
+    /* text-align: center; */
   }
   & img {
-    height: 35px;
+    height: 30px;
   }
 }
 </style>

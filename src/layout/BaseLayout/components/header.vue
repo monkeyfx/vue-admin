@@ -25,7 +25,7 @@
       </el-dropdown>
       <el-popover class="block" placement="bottom" trigger="click">
         <div>
-          1
+          主题
         </div>
         <i class="iconfont icon-zhuti" slot="reference"></i>
       </el-popover>
@@ -130,8 +130,7 @@ export default {
         display: inline-block;
         height: 20px;
         width: 20px;
-        font-size: 20px;
-        /* border: 1px solid #000; */
+        font-size: 18px;
         overflow: hidden;
         display: flex;
         justify-content: center;

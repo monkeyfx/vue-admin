@@ -4,7 +4,7 @@
       <el-tab-pane
         v-for="item in historys"
         :key="item.path"
-        :label="item.title"
+        :label="$t(item.title)"
         :name="item.path"
       />
     </el-tabs>
