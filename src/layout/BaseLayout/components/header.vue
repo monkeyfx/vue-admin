@@ -55,7 +55,7 @@
 import BreadcrumbfromComponent from "./breadcrumb";
 import { mapMutations, mapState, mapActions } from "vuex";
 import * as screenfull from "screenfull";
-import ThemePicker from "@/components/ThemePicker";
+import ThemePicker from "./theme";
 
 export default {
   data() {
