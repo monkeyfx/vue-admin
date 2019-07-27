@@ -25,7 +25,7 @@
       </el-dropdown>
       <!--  -->
       <div class="block color-picker">
-        <el-color-picker v-model="color" size="small"> </el-color-picker>
+        <ThemePicker />
       </div>
       <!--  -->
       <el-dropdown
@@ -55,6 +55,7 @@
 import BreadcrumbfromComponent from "./breadcrumb";
 import { mapMutations, mapState, mapActions } from "vuex";
 import * as screenfull from "screenfull";
+import ThemePicker from "@/components/ThemePicker";
 
 export default {
   data() {
@@ -64,7 +65,8 @@ export default {
     };
   },
   components: {
-    BreadcrumbfromComponent
+    BreadcrumbfromComponent,
+    ThemePicker
   },
   computed: {
     ...mapState("layout", ["isCollapse"])
@@ -107,7 +109,7 @@ export default {
 .layout-header.el-header {
   color: #333;
   height: 50px !important;
-  border-bottom: solid 1px #cccccc;
+  border-bottom: 1px solid #cccccc !important;
   padding: 0;
   overflow: hidden;
   display: flex;
