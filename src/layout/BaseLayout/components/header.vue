@@ -25,7 +25,7 @@
       </el-dropdown>
       <el-popover class="block" placement="bottom" trigger="click">
         <div>
-          主题
+          主题开发中
         </div>
         <i class="iconfont icon-zhuti" slot="reference"></i>
       </el-popover>
