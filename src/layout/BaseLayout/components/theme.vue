@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// const version = require("element-ui/package.json").version; // element-ui version from node_modules
+const version = require("element-ui/package.json").version; // element-ui version from node_modules
 const ORIGINAL_THEME = "#409EFF"; // default color
 export default {
   name: "ThemePicker",
@@ -18,7 +18,7 @@ export default {
       // 初始化主题，可由外部传入
       type: String,
       //default: '#EB815B'
-      default: localStorage["tremePackers"] || "#EB815B"
+      default: localStorage.getItem("tremePackers") || "#409EFF"
     },
     size: {
       // 初始化主题，可由外部传入
@@ -68,13 +68,12 @@ export default {
 
       const chalkHandler = getHandler("chalk", "chalk-style");
 
-      // if (!this.chalk) {
-      //   const url = `//unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`;
-      //   this.getCSSString(url, chalkHandler, "chalk");
-      // } else {
-
-      // }
-      chalkHandler();
+      if (!this.chalk) {
+        const url = `https://unpkg.com/element-ui@${version}/lib/theme-chalk/index.css`;
+        this.getCSSString(url, chalkHandler, "chalk");
+      } else {
+        chalkHandler();
+      }
 
       const styles = [].slice
         .call(document.querySelectorAll("style"))
@@ -117,17 +116,17 @@ export default {
       return newStyle;
     },
 
-    // getCSSString(url, callback, variable) {
-    //   const xhr = new XMLHttpRequest();
-    //   xhr.onreadystatechange = () => {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //       this[variable] = xhr.responseText.replace(/@font-face{[^}]+}/, "");
-    //       callback();
-    //     }
-    //   };
-    //   xhr.open("GET", url);
-    //   xhr.send();
-    // },
+    getCSSString(url, callback, variable) {
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          this[variable] = xhr.responseText.replace(/@font-face{[^}]+}/, "");
+          callback();
+        }
+      };
+      xhr.open("GET", url);
+      xhr.send();
+    },
 
     getThemeCluster(theme) {
       const tintColor = (color, tint) => {
