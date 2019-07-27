@@ -24,6 +24,15 @@ export default {
           vm.$router.push("/");
         }
       });
+    },
+    ASYNC_LOGIN_OUT: ({ commit }) => {
+      delete sessionStorage["TOKEN"];
+      commit("SET_TOKEN", null);
+      if (vm.$route.query.redirect) {
+        vm.$router.push(vm.$route.query.redirect);
+      } else {
+        vm.$router.push("/login");
+      }
     }
   }
 };

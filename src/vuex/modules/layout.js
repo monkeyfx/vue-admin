@@ -24,8 +24,10 @@ export default {
   },
   actions: {
     ACTIONS_HISTORY: ({ commit, state }, object) => {
-      if (!state.historys.map(_ => _.path).includes(object.path)) {
-        commit("SET_HISTORYS", [...state.historys, object]);
+      if (object) {
+        if (!state.historys.map(_ => _.path).includes(object.path)) {
+          commit("SET_HISTORYS", [...state.historys, object]);
+        }
       }
     }
   }

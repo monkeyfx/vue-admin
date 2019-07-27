@@ -1,49 +1,51 @@
 <template>
   <el-header class="layout-header">
     <div class="layout-header-left">
-      <div class="isCollapse"
-           @click="SET_IS_COLLAPSE(!isCollapse)">
+      <div class="isCollapse" @click="SET_IS_COLLAPSE(!isCollapse)">
         <i :class="[isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold']"></i>
       </div>
       <breadcrumbfrom-component />
     </div>
     <div class="header-right-tools">
       <div class="block">
-        <i :class="['iconfont', screenfullIcon]"
-           @click="handleScreenFull"></i>
+        <i :class="['iconfont', screenfullIcon]" @click="handleScreenFull"></i>
       </div>
-      <el-dropdown class="block"
-                   trigger="click"
-                   @command="handleCommand">
+      <el-dropdown class="block" trigger="click" @command="handleCommand">
         <span style="height:20px">
           <i class="iconfont icon-conows-in-change "></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="cn"
-                            :disabled="$i18n.locale === 'cn'">中文</el-dropdown-item>
-          <el-dropdown-item command="en"
-                            :disabled="$i18n.locale === 'en'">English</el-dropdown-item>
+          <el-dropdown-item command="cn" :disabled="$i18n.locale === 'cn'"
+            >中文</el-dropdown-item
+          >
+          <el-dropdown-item command="en" :disabled="$i18n.locale === 'en'"
+            >English</el-dropdown-item
+          >
         </el-dropdown-menu>
       </el-dropdown>
-      <el-popover class="block"
-                  placement="bottom"
-                  trigger="click">
+      <el-popover class="block" placement="bottom" trigger="click">
         <div>
           主题
         </div>
-        <i class="iconfont icon-zhuti"
-           slot="reference"></i>
+        <i class="iconfont icon-zhuti" slot="reference"></i>
       </el-popover>
-      <el-dropdown class="block avatar"
-                   trigger="click">
-        <img src="@/assets/avatar.gif"
-             alt="avatar"
-             width="35px"
-             height="35px"
-             style="border-radius:5px" />
+      <el-dropdown
+        class="block avatar"
+        trigger="click"
+        @command="handleCommandPersonal"
+      >
+        <img
+          src="@/assets/avatar.gif"
+          alt="avatar"
+          width="35px"
+          height="35px"
+          style="border-radius:5px"
+        />
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>退出登陆</el-dropdown-item>
+          <el-dropdown-item command="PROJECT_ADDRESS"
+            >项目地址</el-dropdown-item
+          >
+          <el-dropdown-item command="LOGON_OUT">退出登陆</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -52,7 +54,7 @@
 
 <script>
 import BreadcrumbfromComponent from "./breadcrumb";
-import { mapMutations, mapState } from "vuex";
+import { mapMutations, mapState, mapActions } from "vuex";
 import * as screenfull from "screenfull";
 
 export default {
@@ -70,13 +72,24 @@ export default {
   },
   methods: {
     ...mapMutations("layout", ["SET_IS_COLLAPSE"]),
-
+    ...mapActions("auth", ["ASYNC_LOGIN_OUT"]),
+    //  切换语言
     handleCommand(lang) {
       this.$i18n.locale = lang;
       localStorage["lang"] = lang;
     },
+    // 是否全屏
     handleScreenFull() {
       screenfull.toggle();
+    },
+    // 个人中心
+    handleCommandPersonal(type) {
+      if (type === "PROJECT_ADDRESS") {
+        window.open("https://github.com/linronglang/vue-admin");
+      }
+      if (type === "LOGON_OUT") {
+        this["ASYNC_LOGIN_OUT"]();
+      }
     }
   },
   mounted() {
