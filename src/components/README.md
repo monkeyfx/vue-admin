@@ -1,1 +1,1 @@
-组件
+- global/custom 是自定义的全局组件 通过 index.js 处理 global/custom 文件夹下的组件会自动注册

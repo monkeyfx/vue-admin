@@ -3,6 +3,7 @@ import layoutConfig from "@/_config/layout.config";
 export default {
   namespaced: true,
   state: {
+    // 布局配置
     ...layoutConfig,
     //  历史记录
     historys: [{ title: "仪表盘", path: "/dashboard" }],

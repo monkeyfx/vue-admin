@@ -8,10 +8,10 @@
     </div>
     <div class="header-right-tools">
       <div class="block">
-        <i class="iconfont icon-quanping"></i>
+        <i :class="['iconfont', screenfullIcon]" @click="handleScreenFull"></i>
       </div>
       <el-dropdown class="block" trigger="click" @command="handleCommand">
-        <span>
+        <span style="height:20px">
           <i class="iconfont icon-conows-in-change "></i>
         </span>
         <el-dropdown-menu slot="dropdown">
@@ -49,11 +49,13 @@
 <script>
 import BreadcrumbfromComponent from "./breadcrumb";
 import { mapMutations, mapState } from "vuex";
+import * as screenfull from "screenfull";
 
 export default {
   data() {
     return {
-      color: ""
+      color: "",
+      screenfullIcon: "icon-quanping"
     };
   },
   components: {
@@ -67,6 +69,18 @@ export default {
 
     handleCommand(lang) {
       this.$i18n.locale = lang;
+    },
+    handleScreenFull() {
+      screenfull.toggle();
+    }
+  },
+  mounted() {
+    if (screenfull.enabled) {
+      screenfull.on("change", () => {
+        this.screenfullIcon = !screenfull.isFullscreen
+          ? "icon-quanping"
+          : "icon-quanping1";
+      });
     }
   }
 };
@@ -104,31 +118,30 @@ export default {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    height: 50px;
-
     & .block {
       display: flex;
-      height: 100%;
+      height: 50px;
+      width: 50px;
       align-items: center;
+      justify-content: center;
       cursor: pointer;
       transition: all 0.3s;
+      & i {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        font-size: 20px;
+        /* border: 1px solid #000; */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       &:hover {
-        background: #eee;
+        color: #409eff;
       }
-      & .icon-conows-in-change {
-        font-size: 20px;
-        padding: 0 15px;
+      & .iconfont {
       }
-      & .icon-zhuti {
-        font-size: 20px;
-        padding: 0 15px;
-      }
-      & .icon-quanping {
-        padding: 0 15px;
-      }
-    }
-    & .avatar {
-      padding: 0 15px;
     }
   }
 }

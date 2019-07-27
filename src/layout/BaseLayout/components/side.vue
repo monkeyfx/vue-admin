@@ -1,42 +1,13 @@
 <template>
-  <el-aside class="side" :style="{ width: isCollapse ? '200px' : '50px' }">
+  <el-aside
+    class="side"
+    id="sidebar"
+    :style="{
+      width: isCollapse ? '200px' : '64px',
+      height: isShowLogo ? ' calc(100vh - 50px)' : '100vh'
+    }"
+  >
     <el-scrollbar>
-      <el-menu
-        :collapse="!isCollapse"
-        :router="true"
-        :collapse-transition="false"
-        :unique-opened="false"
-        :default-active="menuActive"
-      >
-        <menu-component :array="menuConfig" />
-      </el-menu>
-      <el-menu
-        :collapse="!isCollapse"
-        :router="true"
-        :collapse-transition="false"
-        :unique-opened="false"
-        :default-active="menuActive"
-      >
-        <menu-component :array="menuConfig" />
-      </el-menu>
-      <el-menu
-        :collapse="!isCollapse"
-        :router="true"
-        :collapse-transition="false"
-        :unique-opened="false"
-        :default-active="menuActive"
-      >
-        <menu-component :array="menuConfig" />
-      </el-menu>
-      <el-menu
-        :collapse="!isCollapse"
-        :router="true"
-        :collapse-transition="false"
-        :unique-opened="false"
-        :default-active="menuActive"
-      >
-        <menu-component :array="menuConfig" />
-      </el-menu>
       <el-menu
         :collapse="!isCollapse"
         :router="true"
@@ -56,29 +27,22 @@ import MenuComponent from "./menu";
 export default {
   data() {
     return {
-      menuConfig: menuConfig,
-      options: {
-        bar: {
-          background: "#000000",
-          opacity: "0.5",
-          minSize: 0.1
-        },
-        rail: {
-          size: "3px"
-        }
-      }
+      menuConfig: menuConfig
     };
   },
   components: { MenuComponent },
-  computed: { ...mapState("layout", ["isCollapse", "menuActive"]) }
+  computed: {
+    ...mapState("layout", ["isCollapse", "menuActive", "isShowLogo"])
+  }
 };
 </script>
 
 <style lang="scss">
 .side {
-  height: calc(100vh - 50px);
   border-right: solid 1px #cccccc;
   transition: all 0.3s;
+  overflow-x: hidden;
+
   & .el-menu {
     border: none;
     overflow-x: hidden;

@@ -8,7 +8,7 @@
       <div
         class="layout-container-header"
         :style="{
-          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 50px)'
+          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 64px)'
         }"
       >
         <slot name="header"></slot>
@@ -43,7 +43,7 @@ export default {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  border: 1px solid #cccccc;
+  /* border: 1px solid #cccccc; */
   .layout-container-header {
     transition: all 0.3s;
     height: 80px;
