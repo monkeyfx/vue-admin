@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <LayoutComponent>
     <template #logo>
       <LogoComponent />
     </template>
@@ -17,17 +17,17 @@
         <custom-router-transition />
       </keep-alive>
     </template>
-  </Layout>
+  </LayoutComponent>
 </template>
 <script>
 import HeaderComponent from "./components/header";
-import Layout from "./components/index";
+import LayoutComponent from "./components/index";
 import LogoComponent from "./components/logo";
 import SideComponent from "./components/side";
 import TabsComponent from "./components/tabs";
 export default {
   components: {
-    Layout,
+    LayoutComponent,
     HeaderComponent,
     LogoComponent,
     SideComponent,

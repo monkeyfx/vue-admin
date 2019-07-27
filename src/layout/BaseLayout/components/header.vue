@@ -12,7 +12,7 @@
       </div>
       <el-dropdown class="block" trigger="click" @command="handleCommand">
         <span style="height:20px">
-          <i class="iconfont icon-conows-in-change "></i>
+          <i class="iconfont icon-in "></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="cn" :disabled="$i18n.locale === 'cn'"
@@ -23,12 +23,11 @@
           >
         </el-dropdown-menu>
       </el-dropdown>
-      <el-popover class="block" placement="bottom" trigger="click">
-        <div>
-          主题开发中
-        </div>
-        <i class="iconfont icon-zhuti" slot="reference"></i>
-      </el-popover>
+      <!--  -->
+      <div class="block color-picker">
+        <el-color-picker v-model="color" size="small"> </el-color-picker>
+      </div>
+      <!--  -->
       <el-dropdown
         class="block avatar"
         trigger="click"
@@ -60,7 +59,7 @@ import * as screenfull from "screenfull";
 export default {
   data() {
     return {
-      color: "",
+      color: "#409eff",
       screenfullIcon: "icon-quanping"
     };
   },
@@ -146,6 +145,7 @@ export default {
       transition: all 0.3s;
       & i {
         display: inline-block;
+        color: #000;
         height: 20px;
         width: 20px;
         font-size: 18px;
@@ -157,7 +157,11 @@ export default {
       &:hover {
         color: #409eff;
       }
-      & .iconfont {
+      & .el-color-picker__trigger {
+        border: none;
+      }
+      & .el-color-picker__color {
+        border: none;
       }
     }
   }
