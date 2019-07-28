@@ -1,17 +1,21 @@
 #### vue-admin
 
-- ## 基于 vuejs，element-ui 的一个经典后台管理模版。
+- ## 基于 vuejs，element-ui 的一个经典后台管理模版，直接专注编写业务逻辑。
 
-  - 自定义主题颜色
-  - 多语言的中英文切换
+- ## 7 月 28 更新
+
+  - 自定义修改主题颜色
+  - 多语言的切换
   - 全屏功能
   - 侧边栏和面包屑导航和 tabs 的联动
   - 路由动画
+  - 路由切换顶部进度条
+  - 可配置的侧边栏
 
-- login 页
+- 登陆页
 
-![](./src/assets/readme/WX20190728-101002@2x.png)
+![登陆页](src/assets/readme/WX20190728-105113@2x.png)
 
 - 首页
 
-![](./src/assets/readme/WX20190728-101117@2x.png)
+![首页](src/assets/readme/WX20190728-101117@2x.png)

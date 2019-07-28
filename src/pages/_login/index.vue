@@ -3,14 +3,14 @@
     <div class="login-layout-container">
       <div class="left">
         <img
-          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564883631&di=f4ffbeef84385c3a010dcfff3d7ef609&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201505%2F21%2F20150521013542_4Et3R.jpeg"
+          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564292034056&di=2bc7f4d4315072e5375226a966e4cccb&imgtype=0&src=http%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_gif%2FtxHw2icbSg2wiaia4fzLEJjwA4hMia2aaMjmhccojicCmWHLm68ZMnQgwAsP3u7cJYCXXjcqKsZXa2WVCPibnonLWNOQ%2F640%3Fwx_fmt%3Dgif"
           alt=""
         />
       </div>
       <div class="login-form">
         <h3>
           <img src="@/assets/logo.png" alt="logo" />
-          <span>后台管理系统</span>
+          <span>VUE ADMIN</span>
         </h3>
         <el-form :model="from" :rules="rules" status-icon ref="ruleForm">
           <el-form-item prop="phone">
@@ -85,7 +85,7 @@ export default {
   /* background-image: url("../../assets/background.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat; */
-  background-color: darkcyan;
+  /* background-color: #202124; */
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -99,9 +99,9 @@ export default {
     display: flex;
     border-radius: 5px;
     overflow: hidden;
-
+    box-shadow: 0 0 20px #333333;
     .left {
-      width: 300px;
+      width: 350px;
       height: 500px;
       background: red;
       & img {
@@ -110,7 +110,7 @@ export default {
       }
     }
     .login-form {
-      width: 300px;
+      width: 350px;
       height: 500px;
       /* background: rgba(255, 255, 255, 1); */
       background: repeating-linear-gradient(45deg, #fff, transparent 100px);
