@@ -34,7 +34,7 @@
         @command="handleCommandPersonal"
       >
         <img
-          src="@/assets/avatar.gif"
+          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
           alt="avatar"
           width="35px"
           height="35px"
