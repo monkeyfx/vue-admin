@@ -1,6 +1,15 @@
-#### vue-admin
+<p align="center">
+  <img width="100" src="./src/assets/logo.png">
+</p>
 
-- ## 基于 vuejs，element-ui 的一个经典后台管理模版，直接专注编写业务逻辑。
+<p align="center">
+  <a>
+    <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
+  </a>
+</p>
 
 - ## 7 月 28 更新
 
