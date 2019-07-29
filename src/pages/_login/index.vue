@@ -2,10 +2,7 @@
   <div class="login-layout">
     <div class="login-layout-container">
       <div class="left">
-        <img
-          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564292034056&di=2bc7f4d4315072e5375226a966e4cccb&imgtype=0&src=http%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_gif%2FtxHw2icbSg2wiaia4fzLEJjwA4hMia2aaMjmhccojicCmWHLm68ZMnQgwAsP3u7cJYCXXjcqKsZXa2WVCPibnonLWNOQ%2F640%3Fwx_fmt%3Dgif"
-          alt=""
-        />
+        <img src="@/assets/login_bg.gif" alt="" />
       </div>
       <div class="login-form">
         <h3>
@@ -103,7 +100,6 @@ export default {
     .left {
       width: 350px;
       height: 500px;
-      background: red;
       & img {
         height: 100%;
         width: 100%;
