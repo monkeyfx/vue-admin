@@ -19,51 +19,21 @@ export default [
     component: () => import("@/pages/dashboard")
   },
   {
-    path: "/test",
+    path: "/element-ui",
     icon: "el-icon-menu",
-    title: "menu.Test",
-    name: "test",
-    component: () => import("@/pages/test"),
+    title: "menu.element-ui.default",
+    name: "element-ui",
+    component: () => import("@/pages/element-ui"),
     meta: {
       auth: true
     },
     children: [
       {
-        path: "/test/test1",
-        icon: "el-icon-menu",
-        title: "menu.Test1",
-        name: "test-1",
-        component: () => import("@/pages/test/test1"),
-        meta: {
-          auth: true
-        }
-      },
-      {
-        path: "/test/test2",
-        icon: "el-icon-menu",
-        title: "menu.Test2",
-        name: "test-2",
-        component: () => import("@/pages/test/test2"),
-        meta: {
-          auth: true
-        }
-      },
-      {
-        path: "/test/test3",
-        icon: "el-icon-menu",
-        title: "menu.Test3",
-        name: "test-3",
-        component: () => import("@/pages/test/test3"),
-        meta: {
-          auth: true
-        }
-      },
-      {
-        path: "/test/test4",
-        icon: "el-icon-menu",
-        title: "menu.Test4",
-        name: "test-4",
-        component: () => import("@/pages/test/test4"),
+        path: "/element-ui/button",
+        // icon: "el-icon-menu",
+        title: "menu.element-ui.button",
+        name: "button",
+        component: () => import("@/pages/element-ui/button"),
         meta: {
           auth: true
         }

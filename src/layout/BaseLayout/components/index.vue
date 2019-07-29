@@ -14,7 +14,13 @@
         <slot name="header"></slot>
         <slot name="tabs"></slot>
       </div>
-      <div class="layout-container-content" v-loading="false">
+      <div
+        class="layout-container-content"
+        v-loading="false"
+        :style="{
+          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 64px)'
+        }"
+      >
         <el-scrollbar>
           <div class="layout-container-content-view">
             <slot name="content"></slot>
@@ -51,9 +57,10 @@ export default {
     border-bottom: 1px solid #cccccc;
   }
   .layout-container-content {
-    height: calc(100vh - 80px);
     overflow: hidden;
     overflow-y: auto;
+    height: calc(100vh - 80px);
+    transition: all 0.3s;
     .layout-container-content-view {
       padding: 15px;
     }

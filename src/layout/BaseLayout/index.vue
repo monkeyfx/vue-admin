@@ -13,9 +13,7 @@
       <TabsComponent />
     </template>
     <template #content>
-      <keep-alive>
-        <custom-router-transition />
-      </keep-alive>
+      <custom-router-transition />
     </template>
   </LayoutComponent>
 </template>
