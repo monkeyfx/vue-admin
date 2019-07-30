@@ -5,7 +5,11 @@ const en = {
     Dashboard: "Dashboard",
     "element-ui": {
       default: "Element-UI",
-      button: "button"
+      button: "button",
+      form: {
+        default: "form",
+        radio: "radio"
+      }
     }
   },
   ...enLocale

@@ -23,20 +23,31 @@ export default [
     icon: "el-icon-menu",
     title: "menu.element-ui.default",
     name: "element-ui",
-    component: () => import("@/pages/element-ui"),
+    component: () => import("@keep-alive-router-view"), // 有层级的需加个空路由 渲染层级
     meta: {
-      auth: true
+      auth: true,
+      keepAlive: true
     },
     children: [
       {
         path: "/element-ui/button",
-        // icon: "el-icon-menu",
         title: "menu.element-ui.button",
         name: "button",
-        component: () => import("@/pages/element-ui/button"),
-        meta: {
-          auth: true
-        }
+        component: () => import("@/pages/element-ui/button")
+      },
+      {
+        path: "/element-ui/form",
+        title: "menu.element-ui.form.default",
+        name: "form",
+        component: () => import("@keep-alive-router-view"), // 有层级的需加个空路由 渲染层级
+        children: [
+          {
+            path: "/element-ui/form/radio",
+            title: "menu.element-ui.form.radio",
+            name: "radio",
+            component: () => import("@/pages/element-ui/form/radio")
+          }
+        ]
       }
     ]
   }

@@ -3,12 +3,10 @@
 </p>
 
 <p align="center">
-  <a>
     <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
-  </a>
-  <a>
-    <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
-  </a>
+    <img src="https://img.shields.io/badge/element--ui-2.10.1-brightgreen.svg" alt="element-ui">
+    <img src="https://img.shields.io/badge/vue--cli-3.0-brightgreen.svg" alt="element-ui">
+    <img src="https://img.shields.io/badge/vue--i18n-8.12.0-brightgreen.svg" alt="element-ui">
 </p>
 
 - ## 7 月 28 更新
