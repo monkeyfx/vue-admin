@@ -26,7 +26,8 @@ export default {
     ACTIONS_HISTORY: ({ commit, state }, object) => {
       if (object) {
         if (!state.historys.map(_ => _.path).includes(object.path)) {
-          commit("SET_HISTORYS", [...state.historys, object]);
+          const data = [...state.historys, object];
+          commit("SET_HISTORYS", data);
         }
       }
     }

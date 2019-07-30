@@ -1,47 +1,19 @@
 export const delay = time => new Promise(resolve => setTimeout(resolve, time));
-
-export const recursionPath = (data, value, count, path) => {
-  let paths = [];
-  count = count + 1;
+export const recursionPath = (data, path, count = -1, paths = []) => {
+  count++;
   for (let i = 0; i < data.length; i++) {
-    if (data[i].path === value) {
-      path[count] = {
-        path: data[i].path,
-        title: data[i].title
-      };
-      paths = path;
-      break;
+    paths[count] = {
+      path: data[i].path,
+      title: data[i].title
+    };
+    if (data[i].path === path) {
+      return paths;
     } else if (data[i].children) {
-      path[count] = {
-        path: data[i].path,
-        title: data[i].title
-      };
-      paths = recursionPath(data[i].children, value, count, path);
-      if (paths.includes(value)) {
+      const results = recursionPath(data[i].children, path, count, paths);
+      if (results[results.length - 1].path === path) {
         return paths;
       }
     }
   }
   return paths;
-};
-
-export const recursionPathToHistory = (data, path) => {
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].path === path) {
-      return {
-        title: data[i].title,
-        path: data[i].path
-      };
-    }
-    if (data[i].children) {
-      return recursionPathToHistory(data[i].children, path);
-    } else {
-      if (data[i].path === path) {
-        return {
-          title: data[i].title,
-          path: data[i].path
-        };
-      }
-    }
-  }
 };

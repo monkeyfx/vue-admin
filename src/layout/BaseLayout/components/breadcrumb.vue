@@ -23,13 +23,9 @@ export default {
 /* 进入 */
 .fade-enter {
   opacity: 0;
-  transform: translateX(0);
-}
-.fade-enter-active {
-  transition: all 2s;
 }
 .fade-enter-to {
   opacity: 1;
-  transform: translateX(0);
+  transition: all 1s;
 }
 </style>

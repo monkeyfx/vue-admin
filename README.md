@@ -9,6 +9,12 @@
     <img src="https://img.shields.io/badge/vue--i18n-8.12.0-brightgreen.svg" alt="element-ui">
 </p>
 
+- ## 7 月 30 更新
+
+  - menu.config 和 router.config 合并为一个文件配置
+  - 路由配置添加 isMenuHidden 为 true 的路由是否侧边栏显示
+  - 路由配置添加 meta.keepAlive 为 true 的路由将会缓存
+
 - ## 7 月 28 更新
 
   - 自定义修改主题颜色
@@ -25,4 +31,4 @@
 
 - 首页
 
-![首页](src/assets/readme/WX20190729-223002@2x.png)
+![首页](src/assets/readme/WX20190730-232935@2x.png)

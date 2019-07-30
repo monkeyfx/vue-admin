@@ -1,17 +1,25 @@
 <template>
   <fragment>
     <template v-for="item in array">
-      <el-submenu v-if="item.children" :index="item.path" :key="item.path">
+      <el-submenu
+        v-if="item.children && !item.isMenuHidden"
+        :index="item.path"
+        :key="item.path"
+      >
         <template slot="title">
-          <i :class="item.icon"></i>
+          <i :class="['iconfont', item.icon]"></i>
           <span slot="title">{{ $t(item.title) }}</span>
         </template>
         <!--  -->
         <menu-tree :array="item.children" />
       </el-submenu>
       <!--  -->
-      <el-menu-item v-else :index="item.path" :key="item.path">
-        <i :class="item.icon"></i>
+      <el-menu-item
+        v-else-if="!item.isMenuHidden"
+        :index="item.path"
+        :key="item.path"
+      >
+        <i :class="['iconfont', item.icon]"></i>
         <span slot="title">{{ $t(item.title) }}</span>
       </el-menu-item>
     </template>
@@ -24,3 +32,11 @@ export default {
   props: { array: Array }
 };
 </script>
+
+<style>
+.iconfont {
+  font-size: 20px;
+  margin-right: 5px;
+  color: #000;
+}
+</style>

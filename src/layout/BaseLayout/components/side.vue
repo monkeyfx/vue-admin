@@ -15,19 +15,19 @@
         :unique-opened="false"
         :default-active="menuActive"
       >
-        <menu-component :array="menuConfig" />
+        <menu-component :array="routes" />
       </el-menu>
     </el-scrollbar>
   </el-aside>
 </template>
 <script>
 import { mapState } from "vuex";
-import menuConfig from "@/_config/menu.config";
+import { routes } from "@/_config/router.config";
 import MenuComponent from "./menu";
 export default {
   data() {
     return {
-      menuConfig: menuConfig
+      routes: routes
     };
   },
   components: { MenuComponent },
