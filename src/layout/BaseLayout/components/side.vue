@@ -3,7 +3,7 @@
     class="side"
     id="sidebar"
     :style="{
-      width: isCollapse ? '200px' : '64px',
+      width: isCollapse ? '200px' : '65px',
       height: isShowLogo ? ' calc(100vh - 50px)' : '100vh'
     }"
   >

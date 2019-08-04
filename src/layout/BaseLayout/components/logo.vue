@@ -1,7 +1,7 @@
 <template>
   <div
     class="logo"
-    :style="{ width: isCollapse ? '200px' : '64px' }"
+    :style="{ width: isCollapse ? '200px' : '65px' }"
     v-if="isShowLogo"
   >
     <div class="logo-img">

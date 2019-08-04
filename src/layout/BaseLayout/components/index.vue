@@ -8,7 +8,7 @@
       <div
         class="layout-container-header"
         :style="{
-          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 64px)'
+          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 65px)'
         }"
       >
         <slot name="header"></slot>
