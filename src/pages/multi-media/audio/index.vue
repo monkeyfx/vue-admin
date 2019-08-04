@@ -7,7 +7,7 @@
     element-loading-background="rgba(0, 0, 0, 0.3)"
   >
     <canvas id="canvas" />
-    <audio hidden src="/mp3/1.mp3" id="audio" controls loop>
+    <audio hidden :src="`${publicPath}mp3/1.mp3`" id="audio" controls loop>
       audio element not supported
     </audio>
     <hr />
@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       loading: true,
-      isbtn: false
+      isbtn: false,
+      publicPath: process.env.BASE_URL
     };
   },
   methods: {
