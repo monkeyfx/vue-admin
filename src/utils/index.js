@@ -1,19 +1,44 @@
 export const delay = time => new Promise(resolve => setTimeout(resolve, time));
-export const recursionPath = (data, path, count = -1, paths = []) => {
-  count++;
-  for (let i = 0; i < data.length; i++) {
-    paths[count] = {
-      path: data[i].path,
-      title: data[i].title
-    };
-    if (data[i].path === path) {
-      return paths;
-    } else if (data[i].children) {
-      const results = recursionPath(data[i].children, path, count, paths);
-      if (results[results.length - 1].path === path) {
-        return paths;
+/**
+ *
+ * @param {Array} tree 路由数据
+ * @param {String} target 当前的路由
+ */
+export const recursionPath = (tree, target) => {
+  let done = false,
+    path = [];
+
+  function traverse(tree, target) {
+    for (let i = 0; i < tree.length; i++) {
+      const node = tree[i];
+      if (!done) {
+        if (i > 0) {
+          path.pop();
+        }
+        path.push({
+          path: node.path,
+          title: node.title
+        });
+        if (node.path === target) {
+          done = true;
+          return;
+        } else {
+          let children = node.children;
+          if (children) {
+            traverse(children, target);
+          }
+        }
       }
     }
+
+    if (!done) {
+      path.pop();
+    }
+
+    return;
   }
-  return paths;
+
+  traverse(tree, target);
+
+  return path;
 };
