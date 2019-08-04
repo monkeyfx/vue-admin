@@ -35,4 +35,4 @@
 
 > 首页
 
-![首页](src/assets/readme/WX20190730-232935@2x.png)
+![首页](src/assets/readme/WechatIMG75.png)
