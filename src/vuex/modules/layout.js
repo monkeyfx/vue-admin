@@ -25,7 +25,10 @@ export default {
   actions: {
     ACTIONS_HISTORY: ({ commit, state }, object) => {
       if (object) {
-        if (!state.historys.map(_ => _.path).includes(object.path)) {
+        if (
+          !state.historys.map(_ => _.path).includes(object.path) &&
+          object.path !== "/login"
+        ) {
           const data = [...state.historys, object];
           commit("SET_HISTORYS", data);
         }

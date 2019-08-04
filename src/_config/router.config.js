@@ -180,13 +180,13 @@ router.afterEach(to => {
   // 保存路由地址
   store.commit("layout/SET_MENU_ACTIVE", to.path);
   // 保存从路由中递归出来面包屑导航
+  const paths = recursionPath(routes, to.path);
   store.commit(
     "layout/SET_BREADCRUMB",
-    recursionPath(routes, to.path).filter(item => item.path !== "/")
+    paths.filter(item => item.path !== "/")
   );
   // 保存路由历史记录
-  const history = recursionPath(routes, to.path);
-  store.dispatch("layout/ACTIONS_HISTORY", history[history.length - 1]);
+  store.dispatch("layout/ACTIONS_HISTORY", paths[paths.length - 1]);
 });
 
 export default router;

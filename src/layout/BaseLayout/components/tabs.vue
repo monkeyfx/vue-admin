@@ -1,12 +1,13 @@
 <template>
   <div class="layout-tabs">
-    <el-tabs v-model="tabsValue" type="card" closable @tab-remove="removeTab">
-      <el-tab-pane
-        v-for="item in historys"
-        :key="item.path"
-        :label="$t(item.title)"
-        :name="item.path"
-      />
+    <el-tabs v-model="tabsValue"
+             type="card"
+             closable
+             @tab-remove="removeTab">
+      <el-tab-pane v-for="item in historys"
+                   :key="item.path"
+                   :label="$t(item.title)"
+                   :name="item.path" />
     </el-tabs>
   </div>
 </template>
@@ -22,6 +23,9 @@ export default {
   watch: {
     tabsValue(path) {
       this.$router.push(path);
+    },
+    historys(a) {
+      console.log(a,'>>>');
     },
     $route({ path }) {
       this.tabsValue = path;
