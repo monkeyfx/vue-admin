@@ -1,7 +1,6 @@
 <p align="center">
   <img width="100" src="./src/assets/logo.png">
 </p>
-
 <p align="center">
     <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
     <img src="https://img.shields.io/badge/element--ui-2.10.1-brightgreen.svg" alt="element-ui">
