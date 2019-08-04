@@ -10,6 +10,16 @@ const en = {
         default: "form",
         radio: "radio"
       }
+    },
+    editor: {
+      default: "editor",
+      quill: "quill-editor",
+      wangEditor: "wangEditor"
+    },
+    "multi-media": {
+      default: "multi-media",
+      audio: "audio",
+      video: "video"
     }
   },
   ...enLocale

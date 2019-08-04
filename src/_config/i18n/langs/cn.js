@@ -10,6 +10,16 @@ const cn = {
         default: "表单",
         radio: "单选框"
       }
+    },
+    editor: {
+      default: "富文本编辑器",
+      quill: "quill富文本编辑器",
+      wangEditor: "wangEditor"
+    },
+    "multi-media": {
+      default: "多媒体",
+      audio: "音乐",
+      video: "视频"
     }
   },
   ...zhLocale

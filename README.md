@@ -9,6 +9,11 @@
     <img src="https://img.shields.io/badge/vue--i18n-8.12.0-brightgreen.svg" alt="element-ui">
 </p>
 
+- ## 8 月 4 更新
+
+  - 加入 quill 富文本编辑器
+  - 加入 wang 富文本编辑器
+
 - ## 7 月 30 更新
 
   - menu.config 和 router.config 合并为一个文件配置

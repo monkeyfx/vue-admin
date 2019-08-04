@@ -34,7 +34,7 @@
         @command="handleCommandPersonal"
       >
         <img
-          src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+          src="@/assets/WechatIMG74_gaitubao_800x800.jpg"
           alt="avatar"
           width="35px"
           height="35px"
