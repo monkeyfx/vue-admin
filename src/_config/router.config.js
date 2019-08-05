@@ -135,9 +135,31 @@ export const routes = [
         name: "video",
         title: "menu.multi-media.video",
         meta: {
-          auth: true
+          auth: true,
+          keepAlive: true
         },
         component: () => import("@/pages/multi-media/video")
+      }
+    ]
+  },
+  {
+    path: "/exception",
+    name: "exception",
+    component: () => import("@/layout/BaseLayout"),
+    icon: "icon-abnormal",
+    title: "menu.exception.default",
+    meta: {
+      auth: true
+    },
+    children: [
+      {
+        path: "/exception/404",
+        name: "exception-404",
+        component: () => import("@/pages/exception/404"),
+        title: "menu.exception.404",
+        meta: {
+          auth: true
+        }
       }
     ]
   },
@@ -146,6 +168,14 @@ export const routes = [
     name: "login",
     isMenuHidden: true,
     component: () => import("@/pages/login")
+  },
+  {
+    path: "*",
+    isMenuHidden: true,
+    redirect: { path: "/exception/404" },
+    meta: {
+      auth: true
+    }
   }
 ];
 

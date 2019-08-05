@@ -33,10 +33,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .iconfont {
   font-size: 20px;
   margin-right: 5px;
-  color: #000;
+  /* color: #000; */
 }
 </style>

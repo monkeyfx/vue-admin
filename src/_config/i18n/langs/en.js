@@ -20,6 +20,10 @@ const en = {
       default: "multi-media",
       audio: "audio",
       video: "video"
+    },
+    exception: {
+      default: "exception",
+      "404": "404"
     }
   },
   ...enLocale

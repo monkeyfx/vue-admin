@@ -8,6 +8,12 @@
     <img src="https://img.shields.io/badge/vue--i18n-8.12.0-brightgreen.svg" alt="element-ui">
 </p>
 
+- ## 8 月 5 更新
+
+  - 添加音视频
+  - 添加异常页
+  - 修改已知 BUG
+
 - ## 8 月 4 更新
 
   - 加入富文本编辑器

@@ -20,6 +20,10 @@ const cn = {
       default: "多媒体",
       audio: "音乐",
       video: "视频"
+    },
+    exception: {
+      default: "异常页",
+      "404": "404"
     }
   },
   ...zhLocale
