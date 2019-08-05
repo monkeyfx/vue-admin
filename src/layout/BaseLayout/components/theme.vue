@@ -98,8 +98,8 @@ export default {
       //存入localStorage
       localStorage.setItem("tremePackers", val);
       if (this.showSuccess) {
-        this.$message({
-          message: "换肤成功",
+        this.$notify({
+          title: "换肤成功",
           type: "success"
         });
       } else {

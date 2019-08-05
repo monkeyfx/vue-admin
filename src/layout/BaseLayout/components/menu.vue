@@ -37,6 +37,6 @@ export default {
 .iconfont {
   font-size: 20px;
   margin-right: 5px;
-  /* color: #000; */
+  color: #ffffff;
 }
 </style>

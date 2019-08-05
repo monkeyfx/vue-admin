@@ -20,13 +20,15 @@ export default {
 <style lang="scss">
 .logo {
   height: 50px;
-  border-bottom: solid 1px #cccccc;
+  border-bottom: solid 1px #303336;
   border-right: solid 1px #cccccc;
   overflow: hidden;
   display: flex;
   align-items: center;
   white-space: nowrap;
   transition: all 0.3s;
+  background-color: #202124;
+
   & .logo-img {
     width: 63px;
     height: 50px;
@@ -40,6 +42,7 @@ export default {
     width: calc(100% - 63px);
     font-size: 20px;
     transition: all 0.3s;
+    color: #fff;
     /* text-align: center; */
   }
   & img {

@@ -109,7 +109,7 @@ export default {
 .layout-header.el-header {
   color: #333;
   height: 50px !important;
-  border-bottom: 1px solid #cccccc !important;
+  border-bottom: 1px solid #eee !important;
   padding: 0;
   overflow: hidden;
   display: flex;

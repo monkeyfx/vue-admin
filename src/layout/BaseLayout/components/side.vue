@@ -10,10 +10,12 @@
     <el-scrollbar>
       <el-menu
         :collapse="!isCollapse"
+        :unique-opened="true"
         :router="true"
         :collapse-transition="false"
-        :unique-opened="false"
         :default-active="menuActive"
+        background-color="#202124"
+        text-color="#ffffff"
       >
         <menu-component :array="routes" />
       </el-menu>
@@ -42,6 +44,7 @@ export default {
   border-right: solid 1px #cccccc;
   transition: all 0.3s;
   overflow-x: hidden;
+  background-color: #202124;
 
   & .el-menu {
     border: none;

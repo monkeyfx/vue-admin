@@ -54,7 +54,8 @@ export default {
     transition: all 0.3s;
     height: 80px;
     overflow: hidden;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 5px #eee;
   }
   .layout-container-content {
     overflow: hidden;

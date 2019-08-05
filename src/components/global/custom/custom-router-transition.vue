@@ -41,6 +41,7 @@ v-leave-to: 定义离开的结束状态
 /* 出去 */
 .fade-leave {
   opacity: 0.1;
+  display: none;
   /* transform: translateX(-95%); */
 }
 .fade-leave-active {
@@ -48,6 +49,7 @@ v-leave-to: 定义离开的结束状态
 }
 .fade-leave-to {
   opacity: 0;
+  display: none;
   /* transform: translateX(-100%); */
 }
 </style>
