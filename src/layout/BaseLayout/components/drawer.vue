@@ -18,7 +18,7 @@ import DrawerContent from "./drawer-content";
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: false,
       direction: "rtl"
     };
   },
