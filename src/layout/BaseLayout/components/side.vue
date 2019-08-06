@@ -4,7 +4,8 @@
     id="sidebar"
     :style="{
       width: isCollapse ? '200px' : '65px',
-      height: isShowLogo ? ' calc(100vh - 50px)' : '100vh'
+      height: isShowLogo ? ' calc(100vh - 50px)' : '100vh',
+      backgroundColor: menuBgColor
     }"
   >
     <el-scrollbar>
@@ -14,8 +15,8 @@
         :router="true"
         :collapse-transition="false"
         :default-active="menuActive"
-        background-color="#202124"
-        text-color="#ffffff"
+        :background-color="menuBgColor"
+        :text-color="menuTextColor"
       >
         <menu-component :array="routes" />
       </el-menu>
@@ -34,7 +35,13 @@ export default {
   },
   components: { MenuComponent },
   computed: {
-    ...mapState("layout", ["isCollapse", "menuActive", "isShowLogo"])
+    ...mapState("layout", [
+      "isCollapse",
+      "menuActive",
+      "isShowLogo",
+      "menuBgColor",
+      "menuTextColor"
+    ])
   }
 };
 </script>
@@ -44,7 +51,6 @@ export default {
   border-right: solid 1px #cccccc;
   transition: all 0.3s;
   overflow-x: hidden;
-  background-color: #202124;
 
   & .el-menu {
     border: none;

@@ -3,10 +3,15 @@
 </p>
 <p align="center">
     <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
-    <img src="https://img.shields.io/badge/element--ui-2.10.1-brightgreen.svg" alt="element-ui">
+    <img src="https://img.shields.io/badge/element--ui-2.11.0-brightgreen.svg" alt="element-ui">
     <img src="https://img.shields.io/badge/vue--cli-3.0-brightgreen.svg" alt="element-ui">
     <img src="https://img.shields.io/badge/vue--i18n-8.12.0-brightgreen.svg" alt="element-ui">
 </p>
+
+- ## 8 月 6 号更新
+
+  - 添加自定义左侧菜单背景和字体颜色
+  - 修改已知 BUG
 
 - ## 8 月 5 更新
 
@@ -42,3 +47,7 @@
 > 首页
 
 ![首页](src/assets/readme/WechatIMG75.png)
+
+> 菜单栏自定义配色
+
+![菜单栏自定义配色](src/assets/readme/WechatIMG77.png)

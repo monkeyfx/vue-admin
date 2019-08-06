@@ -28,6 +28,10 @@
         <ThemePicker />
       </div>
       <!--  -->
+      <div class="block">
+        <drawer />
+      </div>
+      <!--  -->
       <el-dropdown
         class="block avatar"
         trigger="click"
@@ -56,6 +60,7 @@ import BreadcrumbfromComponent from "./breadcrumb";
 import { mapMutations, mapState, mapActions } from "vuex";
 import * as screenfull from "screenfull";
 import ThemePicker from "./theme";
+import Drawer from "./drawer";
 
 export default {
   data() {
@@ -66,7 +71,8 @@ export default {
   },
   components: {
     BreadcrumbfromComponent,
-    ThemePicker
+    ThemePicker,
+    Drawer
   },
   computed: {
     ...mapState("layout", ["isCollapse"])
@@ -156,9 +162,9 @@ export default {
         justify-content: center;
         align-items: center;
       }
-      &:hover {
+      /* &:hover {
         color: #409eff;
-      }
+      } */
       & .el-color-picker__trigger {
         border: none;
       }

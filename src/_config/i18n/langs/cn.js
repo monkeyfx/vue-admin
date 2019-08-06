@@ -26,6 +26,13 @@ const cn = {
       "404": "404"
     }
   },
+  customColor: {
+    "menu-background-color": "菜单背景颜色",
+    "menu-text-color": "菜单文字颜色",
+    "logo-background-color": "LOGO背景颜色",
+    "logo-text-color": "LOGO文字颜色",
+    "logo-border-bottom-color": "LOGO下边框颜色"
+  },
   ...zhLocale
 };
 

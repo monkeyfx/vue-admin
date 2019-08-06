@@ -20,9 +20,12 @@ export default {
     // 设置面包屑导航
     SET_BREADCRUMB: (state, path) => (state.breadcrumbs = path),
     // 设置历史记录
-    SET_HISTORYS: (state, routes) => (state.historys = routes)
+    SET_HISTORYS: (state, routes) => (state.historys = routes),
+    // 设置左侧布局的颜色
+    SET_SIDE_COLOR: (state, object) => (state[object.key] = object.value)
   },
   actions: {
+    // 设置tabs 侧边栏 面包屑 联动
     ACTIONS_HISTORY: ({ commit, state }, object) => {
       if (object) {
         if (
@@ -33,6 +36,11 @@ export default {
           commit("SET_HISTORYS", data);
         }
       }
+    },
+    // 设置左侧布局的颜色
+    ACTIONS_SIDE_COLOR: ({ commit }, object) => {
+      localStorage[object.key] = object.value;
+      commit("SET_SIDE_COLOR", object);
     }
   }
 };

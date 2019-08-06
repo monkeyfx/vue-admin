@@ -1,19 +1,33 @@
 <template>
   <div
     class="logo"
-    :style="{ width: isCollapse ? '200px' : '65px' }"
+    :style="{
+      width: isCollapse ? '200px' : '65px',
+      backgroundColor: logoBgColor,
+      borderBottomColor: logoBorderBottomColor
+    }"
     v-if="isShowLogo"
   >
     <div class="logo-img">
       <img src="@/assets/logo.png" alt="logo" />
     </div>
-    <h1 :style="{ opacity: isCollapse ? '1' : '0' }">VUE ADMIN</h1>
+    <h1 :style="{ opacity: isCollapse ? '1' : '0', color: logoTextColor }">
+      VUE ADMIN
+    </h1>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
 export default {
-  computed: { ...mapState("layout", ["isCollapse", "isShowLogo"]) }
+  computed: {
+    ...mapState("layout", [
+      "isCollapse",
+      "isShowLogo",
+      "logoBgColor",
+      "logoBorderBottomColor",
+      "logoTextColor"
+    ])
+  }
 };
 </script>
 
@@ -27,7 +41,6 @@ export default {
   align-items: center;
   white-space: nowrap;
   transition: all 0.3s;
-  background-color: #202124;
 
   & .logo-img {
     width: 63px;
