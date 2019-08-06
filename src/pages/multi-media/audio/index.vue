@@ -85,7 +85,7 @@ export default {
             ctx.fillRect(i * gap, cheight - value, meterWidth, capHeight);
             capYPositionArray[i] = value;
           }
-          ctx.fillStyle = "red"; //set the filllStyle to gradient for a better look
+          ctx.fillStyle = "#000000"; //set the filllStyle to gradient for a better look
           ctx.fillRect(
             i * gap /*meterWidth+gap*/,
             cheight - value + capHeight,

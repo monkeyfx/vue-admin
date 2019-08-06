@@ -27,8 +27,8 @@
 - ## 7 月 30 更新
 
   - menu.config 和 router.config 合并为一个文件配置
-  - 路由配置添加 isMenuHidden 为 true 的路由是否侧边栏显示
-  - 路由配置添加 meta.keepAlive 为 true 的路由将会缓存
+  - 路由配置添加 isMenuHidden 配置 路由是否侧边栏显示
+  - 路由配置添加 meta.keepAlive 配置 路由是否缓存
 
 - ## 7 月 28 更新
 
