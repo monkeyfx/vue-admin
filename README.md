@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/vue--i18n-8.12.0-brightgreen.svg" alt="element-ui">
 </p>
 
-- ## 8 月 6 号更新
+- ## 8 月 7 号更新
 
   - 自定义修改是否显示 LOGO
   - 自定义修改是否显示 tabs
