@@ -49,9 +49,8 @@ export default {
 <style lang="scss">
 .side {
   border-right: solid 1px #cccccc;
-  transition: all 0.3s;
+  transition: width 0.3s;
   overflow-x: hidden;
-
   & .el-menu {
     border: none;
     overflow-x: hidden;

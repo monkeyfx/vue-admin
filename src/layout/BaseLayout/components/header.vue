@@ -1,5 +1,10 @@
 <template>
-  <el-header class="layout-header">
+  <el-header
+    class="layout-header"
+    :style="{
+      backgroundColor: headerBgColor
+    }"
+  >
     <div class="layout-header-left">
       <div class="isCollapse" @click="SET_IS_COLLAPSE(!isCollapse)">
         <i :class="[isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold']"></i>
@@ -75,7 +80,7 @@ export default {
     Drawer
   },
   computed: {
-    ...mapState("layout", ["isCollapse"])
+    ...mapState("layout", ["isCollapse", "headerBgColor"])
   },
   methods: {
     ...mapMutations("layout", ["SET_IS_COLLAPSE"]),

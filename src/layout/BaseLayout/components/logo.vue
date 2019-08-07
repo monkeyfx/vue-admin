@@ -4,7 +4,8 @@
     :style="{
       width: isCollapse ? '200px' : '65px',
       backgroundColor: logoBgColor,
-      borderBottomColor: logoBorderBottomColor
+      borderBottomColor: logoBorderBottomColor,
+      borderRightColor: logoBorderRightColor
     }"
     v-if="isShowLogo"
   >
@@ -25,6 +26,7 @@ export default {
       "isShowLogo",
       "logoBgColor",
       "logoBorderBottomColor",
+      "logoBorderRightColor",
       "logoTextColor"
     ])
   }

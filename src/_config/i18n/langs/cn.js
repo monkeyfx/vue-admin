@@ -11,16 +11,6 @@ const cn = {
         radio: "单选框"
       }
     },
-    editor: {
-      default: "富文本编辑器",
-      quill: "quill富文本编辑器",
-      wangEditor: "wangEditor"
-    },
-    "multi-media": {
-      default: "多媒体",
-      audio: "音乐",
-      video: "视频"
-    },
     exception: {
       default: "异常页",
       "404": "404"
@@ -31,7 +21,11 @@ const cn = {
     "menu-text-color": "菜单文字颜色",
     "logo-background-color": "LOGO背景颜色",
     "logo-text-color": "LOGO文字颜色",
-    "logo-border-bottom-color": "LOGO下边框颜色"
+    "logo-border-bottom-color": "LOGO下边框颜色",
+    "is-show-logo": "是否显示LOGO",
+    "is-show-tabs": "是否显示Tabs",
+    "logo-border-right-color": "LOGO右边框颜色",
+    "header-bg-color": "顶部栏背景颜色"
   },
   ...zhLocale
 };

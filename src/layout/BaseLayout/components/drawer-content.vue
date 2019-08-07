@@ -1,6 +1,18 @@
 <template>
   <div class="color-content">
     <div class="content-block">
+      <p>{{ $t("customColor.is-show-tabs") }}</p>
+      <div class="active">
+        <el-switch v-model="isShowTabs"> </el-switch>
+      </div>
+    </div>
+    <div class="content-block">
+      <p>{{ $t("customColor.is-show-logo") }}</p>
+      <div class="active">
+        <el-switch v-model="isShowLogo"> </el-switch>
+      </div>
+    </div>
+    <div class="content-block">
       <p>{{ $t("customColor.menu-background-color") }}</p>
       <div class="active">
         <el-input
@@ -37,6 +49,24 @@
     </div>
     <!--  -->
     <div class="content-block">
+      <p>{{ $t("customColor.header-bg-color") }}</p>
+      <div class="active">
+        <el-input
+          size="medium"
+          readonly
+          :value="headerBgColor"
+          @click.native="onInputClick('headerBgColor')"
+        ></el-input>
+        <div style="width:10px"></div>
+        <el-color-picker
+          size="medium"
+          ref="headerBgColor"
+          v-model="headerBgColor"
+        ></el-color-picker>
+      </div>
+    </div>
+    <!--  -->
+    <div class="content-block" v-if="isShowLogo">
       <p>{{ $t("customColor.logo-background-color") }}</p>
       <div class="active">
         <el-input
@@ -54,7 +84,7 @@
       </div>
     </div>
     <!--  -->
-    <div class="content-block">
+    <div class="content-block" v-if="isShowLogo">
       <p>{{ $t("customColor.logo-text-color") }}</p>
       <div class="active">
         <el-input
@@ -71,7 +101,7 @@
         ></el-color-picker>
       </div>
     </div>
-    <div class="content-block">
+    <div class="content-block" v-if="isShowLogo">
       <p>{{ $t("customColor.logo-border-bottom-color") }}</p>
       <div class="active">
         <el-input
@@ -88,6 +118,23 @@
         ></el-color-picker>
       </div>
     </div>
+    <div class="content-block" v-if="isShowLogo">
+      <p>{{ $t("customColor.logo-border-right-color") }}</p>
+      <div class="active">
+        <el-input
+          size="medium"
+          readonly
+          :value="logoBorderRightColor"
+          @click.native="onInputClick('logoBorderRightColor')"
+        ></el-input>
+        <div style="width:10px"></div>
+        <el-color-picker
+          size="medium"
+          ref="logoBorderRightColor"
+          v-model="logoBorderRightColor"
+        ></el-color-picker>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -98,6 +145,50 @@ export default {
     return {};
   },
   computed: {
+    headerBgColor: {
+      get() {
+        return this.$store.state.layout.headerBgColor;
+      },
+      set(value) {
+        this.$store.dispatch("layout/ACTIONS_SIDE_COLOR", {
+          key: "headerBgColor",
+          value
+        });
+      }
+    },
+    logoBorderRightColor: {
+      get() {
+        return this.$store.state.layout.logoBorderRightColor;
+      },
+      set(value) {
+        this.$store.dispatch("layout/ACTIONS_SIDE_COLOR", {
+          key: "logoBorderRightColor",
+          value
+        });
+      }
+    },
+    isShowTabs: {
+      get() {
+        return this.$store.state.layout.isShowTabs;
+      },
+      set(value) {
+        this.$store.dispatch("layout/ACTIONS_SIDE_COLOR", {
+          key: "isShowTabs",
+          value
+        });
+      }
+    },
+    isShowLogo: {
+      get() {
+        return this.$store.state.layout.isShowLogo;
+      },
+      set(value) {
+        this.$store.dispatch("layout/ACTIONS_SIDE_COLOR", {
+          key: "isShowLogo",
+          value
+        });
+      }
+    },
     menuBgColor: {
       get() {
         return this.$store.state.layout.menuBgColor;

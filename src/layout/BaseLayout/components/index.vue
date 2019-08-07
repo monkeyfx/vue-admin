@@ -8,7 +8,8 @@
       <div
         class="layout-container-header"
         :style="{
-          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 65px)'
+          width: isCollapse ? 'calc(100vw - 200px)' : 'calc(100vw - 65px)',
+          height: isShowTabs ? ' 80px' : ' 50px'
         }"
       >
         <slot name="header"></slot>
@@ -22,7 +23,12 @@
         }"
       >
         <el-scrollbar>
-          <div class="layout-container-content-view">
+          <div
+            class="layout-container-content-view"
+            :style="{
+              height: isShowTabs ? 'calc(100vh - 80px)' : 'calc(100vh - 50px)'
+            }"
+          >
             <slot name="content"></slot>
           </div>
         </el-scrollbar>
@@ -38,7 +44,7 @@ export default {
   },
   components: {},
   computed: {
-    ...mapState("layout", ["isCollapse"])
+    ...mapState("layout", ["isCollapse", "isShowTabs"])
   }
 };
 </script>
@@ -52,7 +58,6 @@ export default {
   /* border: 1px solid #cccccc; */
   .layout-container-header {
     transition: all 0.3s;
-    height: 80px;
     overflow: hidden;
     border-bottom: 1px solid #eee;
     box-shadow: 0 1px 5px #eee;
@@ -60,7 +65,6 @@ export default {
   .layout-container-content {
     overflow: hidden;
     overflow-y: auto;
-    height: calc(100vh - 80px);
     transition: all 0.3s;
     .layout-container-content-view {
       padding: 15px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-tabs">
+  <div class="layout-tabs" v-if="isShowTabs">
     <el-tabs v-model="tabsValue" type="card" closable @tab-remove="removeTab">
       <el-tab-pane
         v-for="item in historys"
@@ -31,7 +31,7 @@ export default {
     }
   },
   computed: {
-    ...mapState("layout", ["historys"])
+    ...mapState("layout", ["historys", "isShowTabs"])
   },
   methods: {
     ...mapMutations("layout", ["SET_HISTORYS"]),

@@ -29,7 +29,6 @@ export const routes = [
       {
         path: "/dashboard",
         name: "dashboard",
-        icon: "icon-dashboard",
         title: "menu.Dashboard",
         meta: {
           auth: true
@@ -82,67 +81,6 @@ export const routes = [
     ]
   },
   {
-    path: "/editor",
-    name: "editor",
-    component: () => import("@/layout/BaseLayout"),
-    icon: "icon-edit",
-    title: "menu.editor.default",
-    meta: {
-      auth: true
-    },
-    children: [
-      {
-        path: "/editor/quill",
-        name: "quill",
-        title: "menu.editor.quill",
-        meta: {
-          auth: true
-        },
-        component: () => import("@/pages/editor/quill")
-      },
-      {
-        path: "/editor/wangEditor",
-        name: "wangEditor",
-        title: "menu.editor.wangEditor",
-        meta: {
-          auth: true
-        },
-        component: () => import("@/pages/editor/wangEditor")
-      }
-    ]
-  },
-  {
-    path: "/multi-media",
-    name: "multi-media",
-    component: () => import("@/layout/BaseLayout"),
-    icon: "icon-duomeiti-index",
-    title: "menu.multi-media.default",
-    meta: {
-      auth: true
-    },
-    children: [
-      {
-        path: "/multi-media/audio",
-        name: "audio",
-        title: "menu.multi-media.audio",
-        meta: {
-          auth: true
-        },
-        component: () => import("@/pages/multi-media/audio")
-      },
-      {
-        path: "/multi-media/video",
-        name: "video",
-        title: "menu.multi-media.video",
-        meta: {
-          auth: true,
-          keepAlive: true
-        },
-        component: () => import("@/pages/multi-media/video")
-      }
-    ]
-  },
-  {
     path: "/exception",
     name: "exception",
     component: () => import("@/layout/BaseLayout"),
@@ -185,7 +123,6 @@ NProgress.configure({
 });
 
 const router = new Router({
-  mode: "hash",
   routes: routes
 });
 /**
