@@ -47,3 +47,4 @@
 > 自定义配置
 
 ![菜单栏自定义配色](src/assets/readme/WX20190808-084700@2x.png)
+![菜单栏自定义配色](src/assets/readme/WX20190808-085501@2x.png)
