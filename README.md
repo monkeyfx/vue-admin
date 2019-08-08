@@ -44,6 +44,6 @@
 
 ![首页](src/assets/readme/WechatIMG75.png)
 
-> 菜单栏自定义配色
+> 自定义配置
 
-![菜单栏自定义配色](src/assets/readme/WechatIMG77.png)
+![菜单栏自定义配色](src/assets/readme/WX20190808-084700@2x.png)
