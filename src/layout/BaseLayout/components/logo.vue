@@ -2,7 +2,7 @@
   <div
     class="logo"
     :style="{
-      width: isCollapse ? '201px' : '66px',
+      width: isCollapse ? '200px' : '65px',
       backgroundColor: logoBgColor,
       borderBottomColor: logoBorderBottomColor,
       borderRightColor: logoBorderRightColor
