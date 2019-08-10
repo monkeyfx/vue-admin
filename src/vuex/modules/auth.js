@@ -15,7 +15,6 @@ export default {
     ASYNC_LOGIN: ({ commit }, token) => {
       commit("SET_LOADING", true);
       delay(1000).then(() => {
-        commit("SET_LOADING", false);
         commit("SET_TOKEN", token);
         sessionStorage["TOKEN"] = token;
         if (vm.$route.query.redirect) {
@@ -23,6 +22,7 @@ export default {
         } else {
           vm.$router.push("/");
         }
+        commit("SET_LOADING", false);
       });
     },
     ASYNC_LOGIN_OUT: ({ commit }) => {
