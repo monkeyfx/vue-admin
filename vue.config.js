@@ -22,12 +22,13 @@ module.exports = {
         new CopyWebpackPlugin([
           {
             from: resolve("./CNAME"), // 拷贝此文件到目录下 部署使用
-            to: "./" // 复制到publiv
+            to: "./"
           }
         ])
       ];
     } else {
       // 为开发环境修改配置...
     }
-  }
+  },
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-admin" : "/"
 };
